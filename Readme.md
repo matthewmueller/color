@@ -1,7 +1,7 @@
 
 # color
 
-  super basic color tinter. Based on an answer to the SO question: [Programmatically darken a Hex colour](http://stackoverflow.com/a/1787140/145435)
+  Extremely basic color tinting component. Based on an answer to the SO question: [Programmatically darken a Hex colour](http://stackoverflow.com/a/1787140/145435)
 
 ## Installation
 
