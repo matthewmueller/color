@@ -11,10 +11,10 @@
 
 ```js
 var color = require('color'),
-    c = '#C8272B';
+    c = 'red';
 
-color.darken(c, .5) // '#643d39'
-color.lighten(c, .5) // '#fa595d'
+color.darken(c, .5) // '#ff3232'
+color.lighten(c, .5) // '#cd3232'
 ```
 
 ## API

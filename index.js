@@ -1,12 +1,19 @@
 /**
+ * Module dependencies
+ */
+
+var names = require('./names');
+
+/**
  * Lighten the given color
  * @param  {String} color hex value
  * @param  {Number} value
  * @return {String}
  */
 
-exports.lighten = function(color, value) {
-  return tint(color, value);
+exports.lighten = function(color, v) {
+  v = (v <= 1) ? v*100 : v;
+  return tint(color, v);
 };
 
 /**
@@ -16,8 +23,9 @@ exports.lighten = function(color, value) {
  * @return {String}
  */
 
-exports.darken = function(color, value) {
-  return tint(color, -value);
+exports.darken = function(color, v) {
+  v = (v <= 1) ? v*100 : v;
+  return tint(color, -v);
 };
 
 
@@ -32,8 +40,9 @@ exports.darken = function(color, value) {
  */
 
 function tint(color, v) {
+  color = names[color] ? names[color] : color;
   color = color.replace(/^#/, '');
-  v = (v <= 1) ? v*100 : v;
+  color = (color.length == 3) ? hex3tohex6(color) : color;
   var rgb = parseInt(color, 16);
   var r = Math.abs(((rgb >> 16) & 0xFF)+v); if (r>255) r=r-(r-255);
   var g = Math.abs(((rgb >> 8) & 0xFF)+v); if (g>255) g=g-(g-255);
@@ -45,4 +54,14 @@ function tint(color, v) {
   b = Number(b < 0 || isNaN(b)) ? 0 : ((b > 255) ? 255 : b).toString(16);
   if (b.length == 1) b = '0' + b;
   return "#" + r + g + b;
+}
+
+/**
+ * Hex3 to Hex6
+ */
+
+function hex3tohex6(h) {
+  return h[0] + h[0]
+       + h[1] + h[1]
+       + h[2] + h[2];
 }
