@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>color component</title>
+  <link rel="stylesheet" href="../build/build.css">
+  <style type="text/css">
+    div {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>color component</h1>
+  <div id="light">light</div>
+  <div id="nuetral">nuetral</div>
+  <div id="dark">dark</div>
+  <script src="../build/build.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var color = require('color'),
+        light = document.getElementById('light'),
+        nuetral = document.getElementById('nuetral'),
+        dark = document.getElementById('dark');
+
+    var col = '#C8272B',
+        darken = color.darken(col, 1);
+        lighten = color.lighten(col, .5);
+    console.log(darken, col, lighten);
+    light.style.backgroundColor = lighten;
+    dark.style.backgroundColor = darken;
+    nuetral.style.backgroundColor = col;
+  </script>
+</body>
+</html>

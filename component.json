@@ -1,0 +1,13 @@
+{
+  "name": "color",
+  "repo": "matthewmueller/color",
+  "description": "super basic color tinter",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}
