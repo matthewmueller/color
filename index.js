@@ -21,7 +21,16 @@ exports.darken = function(color, value) {
 };
 
 
-// credits: richard maloney 2006
+/**
+ * Tint the color by the given value
+ *
+ * Credits: richard maloney 2006
+ *
+ * @param {String} color
+ * @param {Number} v
+ * @return {String}
+ */
+
 function tint(color, v) {
   color = color.replace(/^#/, '');
   v = (v <= 1) ? v*100 : v;
